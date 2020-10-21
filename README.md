@@ -10,7 +10,7 @@
 
     % ed kuckuck.toml
 
-(Ihr braucht einen Twitteraccount. Die Token kriegt ihr [hier](https://dev.twitter.com).)
+(Ihr braucht einen Twitteraccount. Die Token kriegt ihr [hier](https://developer.twitter.com/en/apps).)
 
 ## Laufen lassen
 
