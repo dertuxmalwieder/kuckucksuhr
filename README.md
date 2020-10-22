@@ -21,4 +21,4 @@
 
 ## Lizenz
 
-CDDL 1.0, siehe `CDDL-1.0.txt`.
+CDDL 1.0.
