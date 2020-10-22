@@ -7,5 +7,5 @@ edition = "2018"
 [dependencies]
 tokio = { version = "0.2.22", features = ["macros", "rt-threaded"] }
 egg-mode = "0.15"
-config = "0.10"
+config = { version = "0.10", features = ["toml"] }
 chrono = "0.4"
