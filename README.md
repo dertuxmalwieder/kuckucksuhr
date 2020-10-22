@@ -18,3 +18,7 @@
     % crontab -e
     # ...
     0 * * * * /home/kuckucksuhr/kuckucksuhr
+
+## Lizenz
+
+CDDL 1.0, siehe `CDDL-1.0.txt`.
