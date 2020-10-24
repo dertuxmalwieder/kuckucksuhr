@@ -44,7 +44,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 	// Um Twitters skurrile Duplikatserkennung zu umgehen, machen wir
 	// hier eine zufällige Trennung zwischen zwei "Kuckuck"s rein:
 	let trenner = vec!["! ", "!  ", ". ", ".  ", "? "];
-	let kuckuck = format!("Kuckuck{:?}", trenner.choose(&mut rand::thread_rng()));
+	let kuckuck = format!("Kuckuck{}", trenner.choose(&mut rand::thread_rng()).unwrap());
 	let kuckuck_text = kuckuck.repeat(stunde_usize);
 
 	// Und ab damit:
