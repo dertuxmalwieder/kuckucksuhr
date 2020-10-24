@@ -16,6 +16,7 @@
 use chrono::prelude::*;
 use config::{Config, File};
 use egg_mode::{KeyPair, Token, tweet::DraftTweet};
+use rand::seq::SliceRandom;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -39,10 +40,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 	// Aktuelle Stunde:
 	let (_, stunde) = Local::now().hour12();
 	let stunde_usize = stunde as usize;
-	let kuckuck = "Kuckuck! ".repeat(stunde_usize);
+
+	// Um Twitters skurrile Duplikatserkennung zu umgehen, machen wir
+	// hier eine zufällige Trennung zwischen zwei "Kuckuck"s rein:
+	let trenner = vec!["! ", "!  ", ". ", ".  ", "? "];
+	let kuckuck = format!("Kuckuck{:?}", trenner.choose(&mut rand::thread_rng()));
+	let kuckuck_text = kuckuck.repeat(stunde_usize);
 
 	// Und ab damit:
-	let tweet = DraftTweet::new(kuckuck);
+	let tweet = DraftTweet::new(kuckuck_text);
 	tweet.send(&token).await?;
 
 	Ok(())
