@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 tokio = { version = "0.2.22", features = ["macros", "rt-threaded"] }
-egg-mode = "0.15"
+egg-mode = { version = "0.15", features = ["rustls"], default-features = false }
 config = { version = "0.10", features = ["toml"] }
 chrono = "0.4"
 rand = "0.7.3"
