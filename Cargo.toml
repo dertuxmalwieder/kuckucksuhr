@@ -1,12 +1,13 @@
 [package]
 name = "kuckucksuhr"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Cthulhux <git@tuxproject.de>"]
 edition = "2018"
+license = "CDDL-1.0"
 
 [dependencies]
-tokio = { version = "0.2.22", features = ["macros", "rt-threaded"] }
+tokio = { version = "1.4", features = ["macros", "rt-multi-thread"] }
 egg-mode = { version = "0.15", features = ["rustls"], default-features = false }
-config = { version = "0.10", features = ["toml"] }
+config = { version = "0.11", features = ["toml"] }
 chrono = "0.4"
-rand = "0.7.3"
+rand = "0.8"
